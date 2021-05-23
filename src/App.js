@@ -59,7 +59,10 @@ function App() {
         pageCount={pageCount}
         queryString={queryString}
         onTotalChange={(number) => setPageCount(number)}
-        onQueryChange={(string) => setQueryString(string)}
+        onQueryChange={(string) => {
+          setPaginationKeyword("first");
+          setPaginationString("");
+          setQueryString(string)}}
       />
       <NavButton
         start={startCursor}
